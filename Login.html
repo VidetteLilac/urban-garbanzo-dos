@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login | 3D SECTOR</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/prettyPhoto.css" rel="stylesheet">
+	<link href="css/price-range.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+	<link rel="shortcut icon" href="imagenes/ico/favicon.ico">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+<!--/head-->
+
+<body>
+	<header id="header">
+		<!--header-->
+		<div class="header-middle">
+			<!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="Home.html"><img src="imagenes/logo/Logo.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-middle-->
+	</header>
+	<!--/header-->
+	<section id="loginform">
+		<!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="signup-form">
+						<!--login form-->
+						<h2>Ingresa a tu Cuenta</h2>
+						<form id="frmLogin" action="javascript: Login()">
+							<input type="email" id="txtUsuarioEmail" placeholder="Correo Electrónico" required />
+							<input type="password" id="txtContrasenaLogin" placeholder="Contraseña" required />
+							<span class="fa fa-eye-slash icon" onclick="mostrarPasswordLogin()"></span>
+							<button type="submit" class="btn btn-default">Login</button>
+						</form>
+					</div>
+					&nbsp;
+					&nbsp;
+					<div>
+						<a href="#" onclick="MostrarResetPass()">Reestablecer Contraseña</a>
+					</div>
+					&nbsp;
+					&nbsp;
+					<!--/login form-->
+					<div id="divResetPass" class="signup-form" style="display: none;">
+						<form id="frmResetPass" action="javascript: EnviarResetPass()">
+							<input type="email" id="txtEmailResetPass" placeholder="Correo Electrónico" required />
+							<button type="submit" class="btn btn-succes" style="display: inline-block;">Enviar</button>
+							<button type="button" class="btn btn-default" onclick="MostrarResetPass()"
+								style="display: inline-block;">Cancelar</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-sm-1">
+					<h2 class="or">Ó</h2>
+				</div>
+				<div class="col-sm-4">
+					<div class="signup-form">
+						<!--sign up form-->
+						<h2>Regístrate</h2>
+						<form id="frmSignUp" action="javascript: signUp()" class="submit" type>
+							<input type="text" id="txtUserName" placeholder="Nombre(s)" required />
+							<input type="text" id="txtUserApellido" placeholder="Apellido(s)" required />
+							<select id="ddlTipoIdentificacion" name="ddlTipoIdentificacion" required>
+								<option value="">Seleccione el tipo de documento...</option>
+								<option value="c.c.">Cédula</option>
+								<option value="c.e.">Cédula de Extranjería</option>
+								<option value="t.i.">Tarjeta de Identidad</option>
+								<option value="pasaporte">Pasaporte</option>
+								<option value="nit">Nit</option>
+							</select>
+							<input type="number" id="txtNumeroIdentificacion" placeholder="Número de Identificación"  required />
+							<input type="email" id="txtEmail" placeholder="Correo Electrónico" required />
+							<input type="password" id="txtPassword" placeholder="Contraseña" class="col-sm-3"
+								required />
+							<input type="password" id="txtConfirmPass" placeholder="Confirmar Contraseña" required />
+							<!-- <label id="lblIndicacionPass">Utiliza ocho caracteres como mínimo con una combinación de letras, números y símbolos</label> -->
+							<span class="fa fa-eye-slash icon" onclick="mostrarPassword()"></span>
+							<button type="submit" class="btn btn-default">Registrar</button>
+						</form>
+					</div>
+					<!--/sign up form-->
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+<footer id="footerLogin">
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<p class="pull-left">
+					Copyright © 2021 Shelsey. Todos los derechos reservados.
+				</p>
+				<p class="pull-right">
+					Powered by<span><a target="_blank" href="#"> 3D SECTOR</a></span>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--/Footer-->
+
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/price-range.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+
+<script src="backEnd_js/common.js"></script>
+<script src="backEnd_js/login.js"></script>
+<script src="backEnd_js/registro.js"></script>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos | 3D SECTOR</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/prettyPhoto.css" rel="stylesheet" />
+  <link href="css/price-range.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/nuevoMenu.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <link rel="shortcut icon" href="imagenes/ico/favicon.ico" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+
+<body onload="resolveBasicRequest()">
+  <header id="header">
+    <!--header-->
+    <div class="header-middle">
+      <!--header-middle-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 clearfix">
+            <div class="logo pull-left">
+              <a href="Home.html"><img src="imagenes/logo/Logo.png" alt="" /></a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!--/header-middle-->
+
+    <div class="header-bottom">
+      <!--header-bottom-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            <nav class="menuCSS3">
+              <ul class="list-unstyled" id="categoriesMenu">
+                <!-- Esta sección será inyectada por el Controller de common -->
+              </ul>
+            </nav>
+          </div>
+          <div class="col-sm-2">
+            <div class="search_box pull-right">
+              <input id="txtBasicSearch" type="text" placeholder="Escribe lo que buscas..." required />
+            </div>
+          </div>
+          <a href="#" class="btn btn-default search" onclick="BusquedaProductosHome()"><i class="fas fa-search" title="Enviar"></i></a>
+        </div>
+      </div>
+    </div>
+    <!--/header-bottom-->
+  </header>
+  <!--/header-->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="left-sidebar">
+            <div class="brands_products">
+              <!--brands_products-->
+              <h2>Marcas</h2>
+              <div class="search_boxMarca pull-left">
+                <input id="txtFiltroMarca" type="text" placeholder="Escribe una marca..." required />
+                &nbsp;
+              </div>          
+              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorMarca(injectProducts)"><i class="fas fa-filter"></i> Filtrar
+                Marca</a>
+            </div>
+            <!--/brands_products-->
+
+            <div class="price-range">
+              <!--price-range-->
+              <h2>Rango de Precio</h2>
+              <div class="well">
+                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="6000000"
+                  data-slider-step="1000" data-slider-value="[700000,1600000]" id="sl2" /><br />
+                <b>$ 0</b> <b class="pull-right">$ 6'000.000</b>
+              </div>
+              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorPrecio(injectProducts)"><i class="fas fa-filter"></i> Filtrar
+                Precio</a>
+            </div>
+            <!--/price-range-->
+          </div>
+        </div>
+
+        <div class="col-sm-9 padding-right">
+          <div class="features_items" id="productList">
+            <!-- Esta sección será inyectada por el Controller de Productos -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <!--Footer-->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="companyinfo">
+              <h2><span>3D</span> SECTOR</h2>
+              <p>
+                Encuentra los mejores artículos electrónicos de última
+                generación.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Productos.html?cat=Celulares">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Celulares.png" alt="" />
+                  </div>
+                </a>
+                <p>Celulares</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Productos.html?cat=Portátiles">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Portatiles.png" alt="" />
+                  </div>
+                </a>
+                <p>Portátiles</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Productos.html?cat=Televisores">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Televisores.png" alt="" />
+                  </div>
+                </a>
+                <p>Televisores</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Productos.html?cat=Videojuegos">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Videojuegos.png" alt="" />
+                  </div>
+                </a>
+                <p>Video Juegos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="address">
+              <img src="imagenes/home/map.png" alt="" />
+              <p>Carrera 42 D # 45 C 124 Envigado, Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <p class="pull-left">
+            Copyright © 2021 Shelsey. Todos los derechos reservados.
+          </p>
+          <p class="pull-right">
+            Powered by<span><a target="_blank" href="#"> 3D SECTOR</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/Footer-->
+
+  <script src="js/jquery.js"></script>
+  <script src="js/price-range.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="backEnd_js/common.js"></script>
+  <script src="backEnd_js/login.js"></script>
+  <script src="backEnd_js/productos.js"></script>
+  <script src="backEnd_js/carrito.js"></script>
+</body>
+
+</html>

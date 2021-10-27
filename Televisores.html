@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Televisores | 3D SECTOR</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/prettyPhoto.css" rel="stylesheet" />
+  <link href="css/price-range.css" rel="stylesheet" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+  <link href="css/nuevoMenu.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <link rel="shortcut icon" href="imagenes/ico/favicon.ico" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <!--header-->
+    <div class="header-middle">
+      <!--header-middle-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 clearfix">
+            <div class="logo pull-left">
+              <a href="Home.html"><img src="imagenes/logo/Logo.png" alt="" /></a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!--/header-middle-->
+
+    <div class="header-bottom">
+      <!--header-bottom-->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            <nav class="menuCSS3">
+              <ul class="list-unstyled">
+                <li><a href="Home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="Celulares.html" class="active"><i class="fas fa-mobile-alt"></i> Celulares</a>
+                <li><a href="Portatiles.html"><i class="fas fa-laptop"></i> Portátiles</a></li>
+                <li><a href="Televisores.html"><i class="fas fa-tv"></i> Televisores</a></li>
+                <li><a href="VideoJuegos.html"><i class="fas fa-gamepad"></i> VideoJuegos</a>
+
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-sm-2">
+            <div class="search_box pull-right">
+              <input id="txtBusquedaEnCategoria" type="text" placeholder="Buscar en categoría" />
+            </div>
+          </div>
+          <a href="#" class="btn btn-default search" onclick="BusquedaEnCategoria('Televisores')"><i class="fas fa-search" title="Enviar"></i></a>
+        </div>
+      </div>
+    </div>
+    <!--/header-bottom-->
+  </header>
+  <!--/header-->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="left-sidebar">
+            <div class="brands_products">
+              <!--brands_products-->
+              <h2>Marcas</h2>
+              <div class="search_boxMarca pull-left">
+                <input id="txtFiltroMarca" type="text" placeholder="Escribe una marca..." required />
+                &nbsp;
+              </div>          
+              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorMarca('Celulares')"><i class="fas fa-filter"></i> Filtrar
+                Marca</a>
+            </div>
+            <!--/brands_products-->
+
+            <div class="price-range">
+              <!--price-range-->
+              <h2>Rango de Precio</h2>
+              <div class="well">
+                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="1500000"
+                  data-slider-step="5" data-slider-value="[250000,850000]" id="sl2" /><br />
+                <b>$ 0</b> <b class="pull-right">$ 1'500.000</b>
+              </div>
+              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorPrecio('Celulares')"><i class="fas fa-filter"></i> Filtrar
+                Precio</a>
+            </div>
+            <!--/price-range-->
+          </div>
+        </div>
+
+        <div class="col-sm-9 padding-right">
+
+          <div class="features_items">
+            <!--features_items-->
+            <h2 class="title text-center">Celulares</h2>
+
+            <!-- Celular 1 -->
+            <div id="celular_1" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_1"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_1">$949.900</h2>
+                    <p id="descripcionCelular_1">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular 2 -->
+            <div id="celular_2" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_2"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_2">$949.900</h2>
+                    <p id="descripcionCelular_2">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular 3 -->
+            <div id="celular_3" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_3"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_3">$949.900</h2>
+                    <p id="descripcionCelular_3">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular 4 -->
+            <div id="celular_4" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_4"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_4">$949.900</h2>
+                    <p id="descripcionCelular_4">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular 5 -->
+            <div id="celular_5" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_5"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_5">$949.900</h2>
+                    <p id="descripcionCelular_5">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celular 6 -->
+            <div id="celular_6" class="col-sm-4">
+              <div class="product-image-wrapper">
+                <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img id="imgCelular_6"
+                      src="http://drive.google.com/uc?export=view&id=1MaR7t_iLLpiFgmVSkTOFmih9PRf3jCa7" alt="" />
+                    <h2 id="precioCelular_6">$949.900</h2>
+                    <p id="descripcionCelular_6">Xiaomi Redmi Note 8 Pro - 128gb</p>
+                    <p><a href="DetalleProducto.html"><i class="fa fa-plus-square"></i> Ver Especificaciones</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <!--Footer-->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="companyinfo">
+              <h2><span>3D</span> SECTOR</h2>
+              <p>
+                Encuentra los mejores artículos electrónicos de última
+                generación.
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Celulares.html">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Celulares.png" alt="" />
+                  </div>
+                </a>
+                <p>Celulares</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Portatiles.html">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Portatiles.png" alt="" />
+                  </div>
+                </a>
+                <p>Portátiles</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="Televisores.html">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Televisores.png" alt="" />
+                  </div>
+                </a>
+                <p>Televisores</p>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="video-gallery text-center">
+                <a href="VideoJuegos.html">
+                  <div class="iframe-img">
+                    <img src="imagenes/footer/Videojuegos.png" alt="" />
+                  </div>
+                </a>
+                <p>Video Juegos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="address">
+              <img src="imagenes/home/map.png" alt="" />
+              <p>Carrera 42 D # 45 C 124 Envigado, Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <p class="pull-left">
+            Copyright © 2021 Shelsey. Todos los derechos reservados.
+          </p>
+          <p class="pull-right">
+            Powered by<span><a target="_blank" href="#"> 3D SECTOR</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/Footer-->
+
+  <script src="js/jquery.js"></script>
+  <script src="js/price-range.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="backEnd_js/common.js"></script>
+  <script src="backEnd_js/login.js"></script>
+  <script src="backEnd_js/productos.js"></script>
+
+</body>
+
+</html>

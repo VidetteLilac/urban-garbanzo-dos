@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Administracion | 3D SECTOR</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/prettyPhoto.css" rel="stylesheet">
+	<link href="css/price-range.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+	<link rel="shortcut icon" href="imagenes/ico/favicon.ico">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+<!--/head-->
+
+<body onload="getCategories(resolveAdminCategories)">
+	<header id="header">
+		<!--header-->
+		<div class="header-middle">
+			<!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 clearfix">
+						<div class="logo pull-left">
+							<a href="Home.html"><img src="imagenes/logo/Logo.png" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-md-4 clearfix">
+						<div class="logo">
+							<h1>Administración</h1>
+						</div>
+					</div>
+					<div class="col-md-4 clearfix">
+						<div><label id="lblUsuarioActual" text=""></label></div>
+						<div class="shop-menu clearfix pull-right">
+							<ul class="nav navbar-nav">
+								<li><i class="far fa-user"></i> Usuario Actual:<a id="usuarioActual" href="#"></a></li>
+								<li><a id="cerrarSesion" href="#"><i class="fa fa-unlock"></i> Cerrar Sesión</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/header-middle-->
+	</header>
+	<!--/header-->
+
+	<section id="Productform">
+		<!--form-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+
+					<button type="submit" class="btn btn-succes" style="display: inline-block;"
+						onclick="MostrarRegistrarProducto()">Registrar Producto</button>
+					<button type="button" class="btn btn-default" style="display: inline-block;"
+						onclick="MostrarEditarProducto()">Editar Producto</button>
+					&nbsp;
+					&nbsp;
+
+					<div id="divRegistrarProducto" class="signup-form" style="display: none;">
+						<h2>Registrar Producto</h2>
+						<form id="frmRegistrar" method="POST" action="javascript: RegistrarProducto()">
+
+							<table width="80%">
+								<tr>
+									<td><label for="ddlCategorias">Categoría:</label></td>
+									<td>
+										<select id="ddlCategorias" name="ddlCategorias" required></select>
+									</td>
+								</tr>
+								<tr>
+									<td><label>Nombre:</label></td>
+									<td><input id="txtNomProducto" type="text" placeholder="Nombre del Producto" required /></td>
+								</tr>
+								<tr>
+									<td><label>Referencia:</label></td>
+									<td><input id="txtReferencia" type="text" placeholder="Número de Referencia/ Modelo" required /></td>
+								</tr>
+								<tr>
+									<td><label>Marca:</label></td>
+									<td><input id="txtMarca" type="text" placeholder="Fabricante" required /></td>
+								</tr>
+								<tr>
+									<td><label>Descripción:</label></td>
+									<td><textarea id="txtDescripcion" rows="5" cols="50" placeholder="Descripción del producto" required></textarea></td>									
+								</tr>
+								<tr>
+									<td><label>Especificaciones:</label></td>
+									<td><textarea id="txtEspecificaciones" rows="5" cols="50" placeholder="Especificaciones técnicas" required></textarea></td>
+								</tr>
+								<tr>
+									<td><label>Valor:</label></td>
+									<td><input id="txtValor" type="text" placeholder="Precio por unidad" required /></td>
+								</tr>
+								<tr>
+									<td><label>Disponibilidad:</label></td>
+									<td><input id="txtDisponibilidad" type="number" placeholder="Unidades existentes" required /></td>
+								</tr>
+								<tr>
+									<td><label>Url Imagen:</label></td>
+									<td><textarea id="txtUrlImagen" rows="3" cols="50" placeholder="Url Imagen" required></textarea></td>
+								</tr>
+							</table>
+
+							<button type="submit" class="btn btn-succes" style="display: inline-block;">Crear</button>
+							<button type="reset" class="btn btn-default" style="display: inline-block;">Limpiar</button>
+						</form>
+					</div>
+
+					<div id="divEditarProducto" class="signup-form" style="display: none;">
+						<h2>Editar Producto</h2>
+						<form id="frmEditar" method="POST" action="javascript: ActualizarProducto()">
+							<table width="80%">
+								<tr>
+									<td><label for="ddlProductos">Producto:</label></td>
+									<td>
+										<select id="ddlProductos" name="ddlProductos" onchange="javascript: SetDataByProductId()" required>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td><input class="hidden" id="txtIdProductoEdit" type="text" placeholder="Id del Producto" disabled /></td>
+								</tr>
+								<tr>
+									<td><label>Nombre:</label></td>
+									<td><input id="txtNomProductoEdit" type="text" required /></td>
+								</tr>
+								<tr>
+									<td><label for="ddlCategoriasEdit">Categoría:</label></td>
+									<td>
+										<select id="ddlCategoriasEdit" name="ddlCategoriasEdit" required></select>
+									</td>
+								</tr>
+								<tr>
+									<td><label>Referencia:</label></td>
+									<td><input id="txtReferenciaEdit" type="text" required /></td>
+								</tr>
+								<tr>
+									<td><label>Marca:</label></td>
+									<td><input id="txtMarcaEdit" type="text" required /></td>
+								</tr>
+								<tr>
+									<td><label>Descripción:</label></td>
+									<td><textarea id="txtDescripcionEdit" rows="5" cols="50" required></textarea></td>
+								</tr>
+								<tr>
+									<td><label>Especificaciones:</label></td>
+									<td><textarea id="txtEspecificacionesEdit" rows="5" cols="50" required></textarea></td>
+								</tr>
+								<tr>
+									<td><label>Valor:</label></td>
+									<td><input id="txtValorEdit" onkeyup="javascript: formatCurrency(this)" type="text" required /></td>
+								</tr>
+								<tr>
+									<td><label>Disponibilidad:</label></td>
+									<td><input id="txtDisponibilidadEdit" type="number" required /></td>
+								</tr>
+								<tr>
+									<td><label>Url Imagen:</label></td>
+									<td><textarea id="txtUrlImagenEdit" rows="3" cols="50" required></textarea></td>
+								</tr>
+							</table>
+							<button type="submit" class="btn btn-succes" style="display: inline-block;">Actualizar</button>
+							<button type="button" class="btn btn-succes" style="display: inline-block;" onclick="EliminarProducto()">Eliminar</button>
+							<button type="reset" class="btn btn-default" style="display: inline-block;">Limpiar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+<footer id="footerLogin">
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<p class="pull-left">
+					Copyright © 2021 Shelsey. Todos los derechos reservados.
+				</p>
+				<p class="pull-right">
+					Powered by<span><a target="_blank" href="#"> 3D SECTOR</a></span>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--/Footer-->
+
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/price-range.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+
+<script src="backEnd_js/common.js"></script>
+<script src="backEnd_js/login.js"></script>
+<script src="backEnd_js/adminProductos.js"></script>
