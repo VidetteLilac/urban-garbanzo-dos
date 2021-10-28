@@ -75,7 +75,7 @@
                 <input id="txtFiltroMarca" type="text" placeholder="Escribe una marca..." required />
                 &nbsp;
               </div>          
-              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorMarca(injectProducts)"><i class="fas fa-filter"></i> Filtrar
+              <a href="#" class="btn btn-default add-to-cart" onclick="filterByTrademark()"><i class="fas fa-filter"></i> Filtrar
                 Marca</a>
             </div>
             <!--/brands_products-->
@@ -88,7 +88,7 @@
                   data-slider-step="1000" data-slider-value="[700000,1600000]" id="sl2" /><br />
                 <b>$ 0</b> <b class="pull-right">$ 6'000.000</b>
               </div>
-              <a href="#" class="btn btn-default add-to-cart" onclick="FiltrarProductosPorPrecio(injectProducts)"><i class="fas fa-filter"></i> Filtrar
+              <a href="#" class="btn btn-default add-to-cart" onclick="filterByPriceRange()"><i class="fas fa-filter"></i> Filtrar
                 Precio</a>
             </div>
             <!--/price-range-->
@@ -198,7 +198,7 @@
   <script src="backEnd_js/common.js"></script>
   <script src="backEnd_js/login.js"></script>
   <script src="backEnd_js/productos.js"></script>
-  <script src="backEnd_js/carrito.js"></script>
+  <script src="backEnd_js/jsonValues.js"></script>
 </body>
 
 </html>

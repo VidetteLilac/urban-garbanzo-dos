@@ -92,14 +92,8 @@ function FormatoMoneda(numero) {
 }
 
 function getCategories(resultHandler) {
-    const Categorias = Parse.Object.extend('Category');
-    const query = new Parse.Query(Categorias);
-
-    query.find().then((results) => {
-        resultHandler(results, null);
-      }, (error) => {
-        resultHandler(null, error);
-      });
+      const json = getAllCategories();
+      resultHandler(json, null);
 }
 
 function setMenu() {
@@ -123,7 +117,7 @@ function resolveMenu(results, error) {
 }
 
 function getCategoryList(value, index, array) {
-    var result = "\n<li><a href=\"Productos.html?cat=" + value.attributes["name"] + "\"><i class=\"" + value.attributes["css"] + "\"></i> " + value.attributes["name"] + "</a></li>"
+    var result = "\n<li><a href=\"Productos.html?cat=" + value["name"] + "\"><i class=\"" + value["css"] + "\"></i> " + value["name"] + "</a></li>"
     return result
 }
 
