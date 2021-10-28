@@ -1,28 +1,29 @@
-$(document).ready(function () {
-    ConectarApi();
-    CargarUsuarioActual();
+ $(document).ready(function () {
+//    ConectarApi();
+//    CargarUsuarioActual();
 
-    if (sessionStorage.getItem('user') != "Admin") {
+//    if (sessionStorage.getItem('user') != "Admin") {
         setMenu();
-    }
+//    }
 });
 
+/*
 //Función para conectarse al proyecto Back4App V2.0
 function ConectarApi() {
     Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
     Parse.initialize(
-        /*  Claves Victor */
+        ///  Claves Victor ///
          'AodUV80e7GsQrhBHrTq1bo2KyXAV0cPTIhWkn7zI', // This is your Application ID
          '0SUXjA7DMxDp4lIZiuNMIy0OZDuWWQpxJuqKJVkh' // This is your Javascript key
     );
-}
+} 
 
 function CargarUsuarioActual() {
     debugger;
     if (sessionStorage.getItem('user') != null) {
         document.getElementById("usuarioActual").innerHTML = sessionStorage.getItem('user');
     }
-}
+} */
 
 //Función para crear mensajes simples de solo texto
 function MensajeGenerico(texto) {
